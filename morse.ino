@@ -9,7 +9,7 @@ char message[] = "Hello";
 void parseMessage(char message[], int messageSize) {
    for (int i = 0; i < messageSize; i++) {
       char *command = getMorseCommand(message[i]);
-      parseMorseCommand(command, strlen(command));
+      executeMorseCommand(command, strlen(command));
    }
 }
 
@@ -75,7 +75,7 @@ char * getMorseCommand(char letter) {
   }
 }
 
-void parseMorseCommand(char command[], int commandSize) {
+void executeMorseCommand(char command[], int commandSize) {
   for (int i = 0; i < commandSize; i++) {
     if (command[i] == '.') {
       dotBlink();
